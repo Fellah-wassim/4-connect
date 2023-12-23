@@ -1,6 +1,9 @@
 import ConnectFourBoard
 
 class Play:
+  def __init__(self):
+    self.turn = 2
+
   def humanTurn(self, column, board):
     possibleMoves = board.getPossibleMoves()
     matchingMoves = [move for move in possibleMoves if move[1] == column]
@@ -8,6 +11,7 @@ class Play:
     if matchingMoves:
       selectedMove = matchingMoves[0]
       board.makeMove(selectedMove[1], selectedMove[0], 1)
+    self.turn = 2
     
 
   def minimaxAlphaBetaPruning(self, board, depth, alpha, beta, maximizingPlayer):
@@ -57,3 +61,4 @@ class Play:
         bestMove = move
 
     board.makeMove(bestMove[1], bestMove[0], 2)
+    self.turn = 1
