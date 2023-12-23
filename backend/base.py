@@ -1,18 +1,52 @@
-from flask import Flask
-from flask_cors import CORS
+from flask import Flask, render_template
+from flask_socketio import SocketIO, emit
+from ConnectFourBoard import ConnectFourBoard
+from Play import Play
 
-api = Flask(__name__)
-CORS(api) 
+app = Flask(__name__)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
-@api.route('/profile')
-def my_profile():
-  response_body = {
-    "name": "Wassim",
-    "about" :"Hello! I'm a full stack developer that loves python and javascript"
-  }
+gameBoard = ConnectFourBoard()
+playInstance = Play()
 
-  return response_body
+@socketio.on('connect')
+def handle_connect():
+    print('Client connected')
 
+@socketio.on('disconnect')
+def handle_disconnect():
+    print('Client disconnected')
+
+
+@socketio.on('human_move')
+def handle_human_move(data):
+    column = data['column']
+    playInstance.humanTurn(column, gameBoard)
+    game_over_result = gameBoard.gameOver()
+    emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result}, broadcast=True)
+
+@socketio.on('computer_move')
+def handle_computer_move():
+    playInstance.computerTurn(gameBoard)
+    game_over_result = gameBoard.gameOver()
+    emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result}, broadcast=True)
+    
+@socketio.on('move')
+def handle_move(data):
+    player = data['player']
+    column = data['column']
+
+    gameBoard.makeMove(column, gameBoard.getPossibleMoves()[column][0], player)
+
+    # Check if the game is over
+    game_over_result = gameBoard.gameOver()
+
+    # Broadcast the updated state and game over result to all connected clients
+    emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result}, broadcast=True)
+
+@app.route('/')
+def index():
+    return render_template('index.html')  # You can create this HTML file later
 
 if __name__ == '__main__':
-  api.run(host='127.0.0.1', port=5000)
+    socketio.run(app, debug=True)
