@@ -12,6 +12,7 @@ class Play:
       selectedMove = matchingMoves[0]
       board.makeMove(selectedMove[1], selectedMove[0], 1)
     self.turn = 2
+    return selectedMove
     
 
   def minimaxAlphaBetaPruning(self, board, depth, alpha, beta, maximizingPlayer):
@@ -62,3 +63,4 @@ class Play:
 
     board.makeMove(bestMove[1], bestMove[0], 2)
     self.turn = 1
+    return bestMove
