@@ -21,21 +21,17 @@ def handle_disconnect():
 @socketio.on('computer1_move')
 def handle_computer_move():
     if playInstance.turn == 2 and gameBoard.gameOver() == -1:
-        playInstance.computerTurn(gameBoard)
+        move = playInstance.computerTurn(gameBoard)
         game_over_result = gameBoard.gameOver()
-        emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result}, broadcast=True)
+        emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result, 'move': move, 'turn': playInstance.turn}, broadcast=True)
     
 @socketio.on('human_move')
 def handle_move(data):
-    if playInstance.turn == 1 and gameBoard.gameOver() == -1:
+ if playInstance.turn == 1 and gameBoard.gameOver() == -1:
         column = data['column']
-        playInstance.humanTurn(column, gameBoard)
+        move = playInstance.humanTurn(column, gameBoard)
         game_over_result = gameBoard.gameOver()
-        if game_over_result == -1:
-            playInstance.computerTurn(gameBoard)
-            game_over_result = gameBoard.gameOver()
-
-        emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result}, broadcast=True)
+        emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result, 'move': move, 'turn': playInstance.turn}, broadcast=True)
 
 @app.route('/')
 def index():
