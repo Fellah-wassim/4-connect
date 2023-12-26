@@ -2,7 +2,9 @@ class ConnectFourBoard:
   def __init__(self):
     self.board = [[0 for i in range(7)] for j in range(6)]
 
-
+  def reset(self):
+    self.board = [[0 for i in range(7)] for j in range(6)]
+    
   def drawBoard(self):
     for i in range(6):
       for j in range(7):
