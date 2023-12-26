@@ -33,6 +33,12 @@ def handle_move(data):
         game_over_result = gameBoard.gameOver()
         emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result, 'move': move, 'turn': playInstance.turn}, broadcast=True)
 
+@socketio.on('reset')
+def handle_reset():
+    gameBoard.reset()
+    playInstance.turn = 2
+    emit('initial_state', {'board': gameBoard.board}, broadcast=True)
+    
 @app.route('/')
 def index():
     return render_template('index.html')
