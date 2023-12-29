@@ -76,27 +76,39 @@ class ConnectFourBoard:
 
     for i in range(6):
       for j in range(4):
-        window = [self.board[i][j+k] for k in range(4)]
-        score += window.count(piece) ** 2
-        score -= window.count(opponent_piece) ** 2
+        window = [self.board[i][j + k] for k in range(4)]
+        score += self.evaluateWindow(window, piece, opponent_piece)
 
     for i in range(3):
       for j in range(7):
-        window = [self.board[i+k][j] for k in range(4)]
-        score += window.count(piece) ** 2
-        score -= window.count(opponent_piece) ** 2
+        window = [self.board[i + k][j] for k in range(4)]
+        score += self.evaluateWindow(window, piece, opponent_piece)
 
     for i in range(3):
       for j in range(4):
-        window = [self.board[i+k][j+k] for k in range(4)]
-        score += window.count(piece) ** 2
-        score -= window.count(opponent_piece) ** 2
+        window = [self.board[i + k][j + k] for k in range(4)]
+        score += self.evaluateWindow(window, piece, opponent_piece)
 
     for i in range(3, 6):
       for j in range(4):
-        window = [self.board[i-k][j+k] for k in range(4)]
-        score += window.count(piece) ** 2
-        score -= window.count(opponent_piece) ** 2
+        window = [self.board[i - k][j + k] for k in range(4)]
+        score += self.evaluateWindow(window, piece, opponent_piece)
+
+    return score
+
+  def evaluateWindow(self, window, piece, opponent_piece):
+    score = 0
+    empty_count = window.count(0)
+    piece_count = window.count(piece)
+    opponent_count = window.count(opponent_piece)
+
+    if piece_count == 4:
+      score += 1000
+    elif opponent_count == 4:
+      score -= 1000
+    else:
+      score += 10 * piece_count + empty_count
+      score -= 10 * opponent_count
 
     return score
 
