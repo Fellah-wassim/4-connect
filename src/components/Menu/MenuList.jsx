@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-function MenuList() {
+function MenuList(props) {
   return (
     <ul className="w-[100%] list-none text-2xl max-sm:text-base flex flex-col gap-5">
       <Link to="human-vs-bot">
@@ -87,7 +88,7 @@ function MenuList() {
         </button>
       </Link>
       <div>
-        <button className="w-full">
+        <button onClick={() => props.toggleIsGameRules()} className="w-full">
           <div className="flex gap-2 justify-center">
             <>GAME RULES</>
             <svg
