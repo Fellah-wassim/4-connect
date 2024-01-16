@@ -13,7 +13,7 @@ export const MenuPopup = (props) => {
           <button onClick={props.restartGame} className="w-[80%] rounded-3xl">
             <div className="rounded-3xl">Restart Game</div>
           </button>
-          <button onClick={props.restartGame} className="w-[80%] rounded-3xl">
+          <button className="w-[80%] rounded-3xl">
             <Link to="/">
               <div className="rounded-3xl">Main Menu</div>
             </Link>
