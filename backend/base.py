@@ -24,7 +24,14 @@ def handle_computer_move():
         move = playInstance.computerTurn(gameBoard)
         game_over_result = gameBoard.gameOver()
         emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result, 'move': move, 'turn': playInstance.turn}, broadcast=True)
-    
+
+@socketio.on('computer2_move')
+def handle_computer2_move():
+    if playInstance.turn == 1 and gameBoard.gameOver() == -1:
+        move = playInstance.computer2Turn(gameBoard)
+        game_over_result = gameBoard.gameOver()
+        emit('update_state', {'board': gameBoard.board, 'game_over': game_over_result, 'move': move, 'turn': playInstance.turn}, broadcast=True)
+          
 @socketio.on('human_move')
 def handle_move(data):
  if playInstance.turn == 1 and gameBoard.gameOver() == -1:
@@ -37,7 +44,7 @@ def handle_move(data):
 def handle_reset():
     gameBoard.reset()
     playInstance.turn = 2
-    emit('initial_state', {'board': gameBoard.board}, broadcast=True)
+    emit('update_state', {'board': gameBoard.board}, broadcast=True)
     
 @app.route('/')
 def index():

@@ -1,4 +1,5 @@
 import ConnectFourBoard
+import random
 
 class Play:
   def __init__(self):
@@ -11,13 +12,16 @@ class Play:
     if matchingMoves:
       selectedMove = matchingMoves[0]
       board.makeMove(selectedMove[1], selectedMove[0], 1)
-    self.turn = 2
-    return selectedMove
+      self.turn = 2
+      return selectedMove
     
 
   def minimaxAlphaBetaPruning(self, board, depth, alpha, beta, maximizingPlayer):
     if depth == 0 or board.gameOver() != -1:
-      return board.heuristicEval(2) - board.heuristicEval(1)
+      if self.turn == 2:
+        return board.heuristicEval(2) - board.heuristicEval(1)
+      else:
+        return board.heuristicEval2(2) - board.heuristicEval2(1)
 
     possibleMoves = board.getPossibleMoves()
 
@@ -64,3 +68,22 @@ class Play:
     board.makeMove(bestMove[1], bestMove[0], 2)
     self.turn = 1
     return bestMove
+  
+  def computer2Turn(self, board):
+      possibleMoves = board.getPossibleMoves()
+      bestMove = None
+      bestValue = float('inf')  # Initialize to positive infinity for minimizing player
+
+      for move in possibleMoves:
+          row, col = move
+          board.makeMove(col, row, 1)  # Make move for player 1 (minimizing player)
+          moveValue = self.minimaxAlphaBetaPruning(board, 3, float('-inf'), float('inf'), False)
+          board.board[row][col] = 0  # Undo the move
+
+          if moveValue < bestValue:
+              bestValue = moveValue
+              bestMove = move
+
+      board.makeMove(bestMove[1], bestMove[0], 1)  # Make the best move for player 1
+      self.turn = 2
+      return bestMove
