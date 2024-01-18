@@ -19,7 +19,7 @@ In this project, you will find a 4-connect game implementation with player vs bo
 
 ### Player vs Bot
 
-![Player vs Bot](./src/assets/screenshots/playerVsBot.gif)
+![Player vs Bot](./src/assets/screenshots/payerVsBot.gif)
 
 ### Bot vs Bot
 
