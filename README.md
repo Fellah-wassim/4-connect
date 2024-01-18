@@ -13,18 +13,13 @@ In this project, you will find a 4-connect game implementation with player vs bo
 - Minimax algorithm with alpha-beta pruning
 - Heuristic evaluation for efficient decision-making
 
-<div style="display: flex; justify-content: space-between;">
-
-  <div style="flex: 0 0 48%; text-align: center;">
-    <p>Player vs Bot</p>
-    <img src="./src/assets/screenshots/playerVsBot.gif" alt="Player vs Bot" width="300"/>
-  </div>
-
-  <div style="flex: 0 0 48%; text-align: center;">
-    <p>Bot vs Bot</p>
-    <img src="./src/assets/screenshots/botVsBot.gif" alt="Bot vs Bot" width="300"/>
-  </div>
-
+<div>
+  <p>Player vs Bot</p>
+  <img src="./src/assets/screenshots/payerVsBot.gif" alt="Player vs Bot" width="400"/>
+</div>
+<div>
+  <p>Bot vs Bot</p>
+  <img src="./src/assets/screenshots/botVsBot.gif" alt="Bot vs Bot" width="400"/>
 </div>
 
 
