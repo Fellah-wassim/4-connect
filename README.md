@@ -16,17 +16,17 @@ In this project, you will find a 4-connect game implementation with player vs bo
 ## User Interface
 
 
-# Main Menu
+### Main Menu
 <img src="./src/assets/screenshots/mainMenu.jpg" alt="Main Menu" width="600"/>
 
-# Game Rules
-<img src="./src/assets/screenshots/gameRules.jpg" alt="Main Menu" width="600"/>
+### Game Rules
+<img src="./src/assets/screenshots/gameRules.jpg" alt="Game Rules" width="600"/>
 
-# Menu Popup
-<img src="./src/assets/screenshots/menuPopup.jpg" alt="Main Menu" width="600"/>
+### Menu Popup
+<img src="./src/assets/screenshots/menuPopup.jpg" alt="Menu Popup" width="600"/>
 
-# Game Over Popup
-<img src="./src/assets/screenshots/gameOver.jpg" alt="Main Menu" width="600"/>
+### Game Over Popup
+<img src="./src/assets/screenshots/gameOverPopup.jpg" alt="Game Over Popup" width="600"/>
 
 # Player vs Bot
 <img src="./src/assets/screenshots/payerVsBot.gif" alt="Player vs Bot" width="600"/>
