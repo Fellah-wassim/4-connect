@@ -38,10 +38,10 @@ In this project you will find 4-connect game implementation with a player vs bot
    ```bash
    npm install
    ```
-3. Run the Frontend.
-  ```bash
+3. Run the `frontend`.
+   ```bash
    npm run dev
-  ```
+   ```
 
 ### Contributing
 
