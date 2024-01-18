@@ -21,14 +21,17 @@ In this project you will find 4-connect game implementation with a player vs bot
    ```bash
    cd backend
    ```
-2. Install the requirements
-  ```bash
+   
+2. Install the requirements.
+   ```bash
    pip install -r requirements.txt
-  ```
+   ```
+   
 3. Run the Flask application.
-  ```bash
+   ```bash
    Flask run
-  ```
+   ```
+   
 
 ### Frontend (React)
 
