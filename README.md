@@ -72,9 +72,36 @@ In this project, you will find a 4-connect game implementation with player vs bo
    npm run dev
    ```
 
-### Contributing
 
-Feel free to contribute to the project by opening issues or submitting pull requests
+## Contributing
+
+Contributions are always welcome! If you find a bug or have a feature request, please open an issue. If you want to contribute code, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b my-feature`
+3. Make your changes and commit them: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-feature`
+5. Submit a pull request
 
 
+## Tools Used
 
+This project was created using the following tools:
+
+- <img src="https://img.shields.io/badge/library-React-blue?style=flat-square&logo=react" alt="React" /> React
+- <img src="https://img.shields.io/badge/code-JavaScript-blue?style=flat-square&logo=javascript" alt="JavaScript" /> JavaScript
+- <img src="https://img.shields.io/badge/framework-Tailwind_CSS-blue?style=flat-square&logo=tailwind-css" alt="Tailwind CSS" /> Tailwind CSS
+- <img src="https://img.shields.io/badge/package-npm-blue?style=flat-square&logo=npm" alt="npm" /> npm
+- <img src="https://img.shields.io/badge/linter-ESLint-blue?style=flat-square&logo=eslint" alt="ESLint" /> ESLint
+- <img src="https://img.shields.io/badge/git-Git-blue?style=flat-square&logo=git" alt="Git" /> Git
+- <img src="https://img.shields.io/badge/code%20formatter-Prettier-blue?style=flat-square&logo=prettier" alt="Prettier" /> Prettier
+- <img src="https://img.shields.io/badge/code-VSCode-blue?style=flat-square&logo=visual-studio-code" alt="VS Code" /> Visual Studio Code
+- <img src="https://img.shields.io/badge/code-VSCode-blue?style=flat-square&logo=python" alt="Python" /> Python
+- <img src="https://img.shields.io/badge/code-VSCode-blue?style=flat-square&logo=flask" alt="flask" /> Flask
+- <img src="https://img.shields.io/badge/code-VSCode-blue?style=flat-square&logo=socket" alt="socket" /> Socket
+
+---
+
+<p align="center">
+  Made with ❤️ by Fellah Wassim
+</p>
