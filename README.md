@@ -96,9 +96,9 @@ This project was created using the following tools:
 - <img src="https://img.shields.io/badge/git-Git-blue?style=flat-square&logo=git" alt="Git" /> Git
 - <img src="https://img.shields.io/badge/code%20formatter-Prettier-blue?style=flat-square&logo=prettier" alt="Prettier" /> Prettier
 - <img src="https://img.shields.io/badge/code-VSCode-blue?style=flat-square&logo=visual-studio-code" alt="VS Code" /> Visual Studio Code
-- <img src="https://img.shields.io/badge/code-VSCode-blue?style=flat-square&logo=python" alt="Python" /> Python
-- <img src="https://img.shields.io/badge/code-VSCode-blue?style=flat-square&logo=flask" alt="flask" /> Flask
-- <img src="https://img.shields.io/badge/code-VSCode-blue?style=flat-square&logo=socket" alt="socket" /> Socket
+- <img src="https://img.shields.io/badge/code-Python-blue?style=flat-square&logo=python" alt="Python" /> Python
+- <img src="https://img.shields.io/badge/code-Flask-blue?style=flat-square&logo=flask" alt="flask" /> Flask
+- <img src="https://img.shields.io/badge/code-websocket-blue?style=flat-square&logo=websocket" alt="socket" /> Socket
 
 ---
 
