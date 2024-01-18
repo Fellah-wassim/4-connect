@@ -15,15 +15,14 @@ In this project, you will find a 4-connect game implementation with player vs bo
 - Minimax algorithm with alpha-beta pruning
 - Heuristic evaluation for efficient decision-making
 
-## Screenshots and GIFs
-
-### Player vs Bot
+## Player vs Bot
 
 ![Player vs Bot](./src/assets/screenshots/payerVsBot.gif)
 
-### Bot vs Bot
+## Bot vs Bot
 
 ![Bot vs Bot](./src/assets/screenshots/botVsBot.gif)
+
 
 ## How to Run
 
